@@ -1,0 +1,58 @@
+@use './variable' as * ;
+@use './mizin' as * ;
+
+#footer{
+  padding:$basic * 7 0 $basic * 5;
+  background-color: $back;
+}
+
+aside{
+  width:$content;
+  @include margin($bottom:60px);
+  @include layout($wrap:wrap, $start:flex-start,$vertial:flex-start);
+  dl{width:25%;
+   dt{
+    font-size:$midlle;
+    font-weight:bold;
+    margin-bottom:35px;
+    color:$black;
+    span{
+      font-size:$midlle;
+      padding-bottom:$basic;
+      border-bottom:1px solid $black;
+      display:inline-block;
+      width:100px;
+    }
+   }
+   dd{
+    margin-bottom:15px;
+    a{
+      color:$color;
+      font-size: $small;
+    }
+   }
+   &:nth-child(1){
+    address{
+      font-style:normal;
+      font-weight: bold;
+      width:247px;
+      font-size:$midlle;
+      line-height:25px;
+    }
+   }
+  }
+}
+
+footer{
+  width:$content;
+@include margin;
+@include layout($direction:row-reverse);
+ul{
+  @include layout($start:flex-start);
+  li{margin-left:$basic;}
+}
+small{
+  font-size:$small;
+  color:$color;
+}
+}

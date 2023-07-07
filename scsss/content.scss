@@ -1,0 +1,122 @@
+@use './variable' as * ;
+@use './mizin' as * ;
+
+// article: 43분
+article{
+  >div{
+    padding:$basic*9 0;
+    width:$content;
+    @include margin;
+    h3{
+      margin-bottom:$basic * 8;
+      @include center;
+      font-size:$large ;
+      color:$black;
+      font-weight:bold;
+    }
+  }
+}
+
+.btn{
+  position:relative;
+  @include layout;
+  p.left{
+    font-size:$small;
+    color:$color;
+  }
+  p.right{
+    width:195px;
+    padding:$small 0;
+    @include layout($start:center);
+    @include border;
+    border-radius: 18px;
+    font-size: $small;
+    color:$color;
+  }
+  ul{
+    position:absolute;
+    right:0; top:$basic*4;
+    display:none;
+    width:195px;
+    @include border;
+    border-bottom:none;
+    background-color:$white;
+    z-index: 1000;
+    li{
+      border-bottom:1px solid $back;
+      line-height:25px;
+      @include center;
+      font-size:$small;
+      color:$color;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.gallery{
+  @include layout($wrap:wrap);
+  figure{
+    width:270px;
+    margin-bottom:$basic * 5;
+    position:relative;
+    > img{
+      margin-bottom:$basic * 3;
+    }
+  }
+  dl{
+    font-size:$midlle;
+    @include center;
+    dt{
+      margin-bottom:$basic;
+      color:$black;
+      font-weight:bold;
+    }
+    dd{
+      &:nth-child(2){
+        margin-bottom:$basic * 2;
+        > ins{
+          margin: 0 $basic;
+          color:$red;
+        }
+        > del{
+          margin: 0 $basic;
+          color:$color;
+        }
+      }
+      &:nth-child(3){
+        @include layout;
+        button{
+          @include layout($start:center);
+          @include border;
+          background-color:$white;
+          &:first-child{
+            width:133px;
+            height:37px;
+            color:$black;
+            border-radius: 18px;
+          }
+          &:last-child{
+            width:37px;
+            height:37px;
+            border-radius: 50%;
+          }
+        }
+      }
+      &:nth-child(4){
+        position:absolute;
+        right:0;
+        bottom:145px;
+        b{
+          width:$basic * 5;
+          height:$basic * 5;
+          display:block;
+          background-color:$red;
+          color:$white;
+          border-radius: 50%;
+          @include layout($start:center);
+        }
+      }
+    }
+  }
+}

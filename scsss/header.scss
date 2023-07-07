@@ -1,0 +1,59 @@
+@use './variable' as * ;
+@use './mizin' as * ;
+
+
+// header :3:00
+header{
+  padding:$basic*7 0 $basic*2;
+  background-color:$back;
+  position:relative;
+}
+
+.botton{
+  > h1{
+    @include center;
+    margin-bottom:$basic*5;
+  }
+  > nav{
+    ul{
+      @include layout($start:center);
+      li{
+        margin: 0 $basic*3;
+        padding-bottom:$basic;
+        position:relative;
+        a{
+          font-size:$small;
+          color:$dark;
+        }
+        span{
+          position:absolute;
+          left:0; bottom:0;
+          width:$full;
+          height:2px;
+          background-color:transparent;
+        }
+        &:hover{
+          span{background-color:$black;}
+        }
+      }
+    }
+  }
+}
+
+.top{
+  position:absolute;
+  width:$full;
+  padding:$basic*2 0;
+  background-color:$white;
+  left:0; top:0;
+  p{
+    width:$content;
+    @include margin;
+    a{font-size:$small;
+     color:$color;}
+  }
+  
+}
+
+// 11 - 21;
+// 11 - 21;
